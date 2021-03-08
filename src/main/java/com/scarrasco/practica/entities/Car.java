@@ -20,15 +20,15 @@ public abstract class Car implements ICar {
     public Car(){}
 
     public Car(Long id, String carType, String brand, String model, String color, Integer numDoors){
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.color = color;
-        this.numDoors = numDoors;
-        this.battery = null;
-        this.motor = null;
-        this.air = null;
-        this.carType = carType;
+        this.id         = id;
+        this.brand      = brand;
+        this.model      = model;
+        this.color      = color;
+        this.numDoors   = numDoors;
+        this.battery    = null;
+        this.motor      = null;
+        this.air        = null;
+        this.carType    = carType;
     }
 
     public Long getId() {
@@ -115,8 +115,8 @@ public abstract class Car implements ICar {
     @Override
     public void start(Battery battery, Motor motor, AirConditioner air){
         this.battery = battery;
-        this.motor = motor;
-        this.air = air;
+        this.motor   = motor;
+        this.air     = air;
     }
 
     @Override

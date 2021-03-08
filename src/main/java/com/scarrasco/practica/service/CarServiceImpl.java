@@ -2,7 +2,7 @@ package com.scarrasco.practica.service;
 
 import com.scarrasco.practica.entities.Car;
 import com.scarrasco.practica.entities.CarFactory;
-import com.scarrasco.practica.error.CocheNotFoundException;
+import com.scarrasco.practica.error.CarNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -43,10 +43,10 @@ public class CarServiceImpl implements CarService {
      * @param tipo url param:Type of car you want to create("electrico", "hibrido", "combustion").
      * @param queryParams data necessary to create the car.
      * @return Car created.
-     * @throws CocheNotFoundException It indicates that the car not found in the database.
+     * @throws CarNotFoundException It indicates that the car not found in the database.
      */
     @Override
-    public Car save(String tipo, MultivaluedMap<String, String> queryParams) throws CocheNotFoundException {
+    public Car save(String tipo, MultivaluedMap<String, String> queryParams) throws CarNotFoundException {
 
         // New car
         if (staticIdCar == null || cars.isEmpty()){
@@ -77,14 +77,14 @@ public class CarServiceImpl implements CarService {
      * @param id Id of car you want to update.
      * @param queryParams data necessary to update the car.
      * @return Car updated.
-     * @throws CocheNotFoundException It indicates that the car not found in the database.
+     * @throws CarNotFoundException It indicates that the car not found in the database.
      */
     @Override
-    public Car update(Long id, MultivaluedMap<String, String> queryParams) throws CocheNotFoundException {
+    public Car update(Long id, MultivaluedMap<String, String> queryParams) throws CarNotFoundException {
 
         Car oldCar = cars.get(id);
 
-        if (oldCar == null) throw new CocheNotFoundException();
+        if (oldCar == null) throw new CarNotFoundException();
 
         String tipo = oldCar.getCarType();
 

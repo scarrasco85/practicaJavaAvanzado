@@ -1,6 +1,6 @@
 package com.scarrasco.practica.entities;
 
-import com.scarrasco.practica.error.CocheNotFoundException;
+import com.scarrasco.practica.error.CarNotFoundException;
 
 import javax.ws.rs.core.MultivaluedMap;
 
@@ -9,8 +9,8 @@ import javax.ws.rs.core.MultivaluedMap;
  */
 public class CarFactory {
 
-    public static final String ELECTRIC_CAR = "electrico";
-    public static final String HYBRID_CAR = "hibrido";
+    public static final String ELECTRIC_CAR   = "electrico";
+    public static final String HYBRID_CAR     = "hibrido";
     public static final String COMBUSTION_CAR = "combustion";
 
     /**
@@ -19,16 +19,16 @@ public class CarFactory {
      * @param id Id car.
      * @param queryParams Car model fields.
      * @return a starter Car.
-     * @throws CocheNotFoundException In case the type of car does not exist
+     * @throws CarNotFoundException In case the type of car does not exist
      */
-    public static Car createCar(String tipo, Long id, MultivaluedMap<String, String> queryParams) throws CocheNotFoundException {
+    public static Car createCar(String tipo, Long id, MultivaluedMap<String, String> queryParams) throws CarNotFoundException {
 
         CarFacade facade = new CarFacade();
-        String brand = queryParams.getFirst("brand");
-        String model = queryParams.getFirst("model");
-        String color = queryParams.getFirst("color");
-        String numDoors = queryParams.getFirst("numDoors");
-        String fuel = queryParams.getFirst("fuel");
+        String brand     = queryParams.getFirst("brand");
+        String model     = queryParams.getFirst("model");
+        String color     = queryParams.getFirst("color");
+        String numDoors  = queryParams.getFirst("numDoors");
+        String fuel      = queryParams.getFirst("fuel");
 
 
         return switch (tipo) {
@@ -41,7 +41,7 @@ public class CarFactory {
             case COMBUSTION_CAR -> facade.prepareCar(
                     new CombustionCar(id, brand, model, color, Integer.parseInt(numDoors), fuel)
             );
-            default -> throw new CocheNotFoundException();
+            default -> throw new CarNotFoundException();
         };
 
     }

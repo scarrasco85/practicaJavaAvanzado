@@ -16,7 +16,7 @@ public class HybridCar extends Car {
 
         super(id, HYBRID_CAR, brand, model, color, numDoors);
         this.energyBattery = 100;
-        this.fuel = fuel;
+        this.fuel          = fuel;
 
     }
 
