@@ -1,0 +1,850 @@
+{
+	"info": {
+		"_postman_id": "be05bd3a-36a7-4e79-80af-9cb06a05de52",
+		"name": "practica-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cars",
+			"item": [
+				{
+					"name": "Cars: Get all cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							]
+						},
+						"description": "Get all cars"
+					},
+					"response": [
+						{
+							"name": "Cars: Get all cars (Muestra todos los coches que hay en la DB)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "536"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:44:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"carType\": \"electrico\",\n        \"battery\": {\n            \"on\": true\n        },\n        \"motor\": {\n            \"on\": true\n        },\n        \"air\": {\n            \"on\": true\n        },\n        \"brand\": \"Peugeot\",\n        \"model\": \"3008\",\n        \"color\": \"Rojo\",\n        \"numDoors\": 5,\n        \"energyBattery\": 100\n    },\n    {\n        \"id\": 2,\n        \"carType\": \"hibrido\",\n        \"battery\": {\n            \"on\": true\n        },\n        \"motor\": {\n            \"on\": true\n        },\n        \"air\": {\n            \"on\": true\n        },\n        \"brand\": \"Renault\",\n        \"model\": \"Clio\",\n        \"color\": \"Azul\",\n        \"numDoors\": 3,\n        \"energyBattery\": 100,\n        \"fuel\": \"Diesel\"\n    },\n    {\n        \"id\": 3,\n        \"carType\": \"combustion\",\n        \"battery\": {\n            \"on\": true\n        },\n        \"motor\": {\n            \"on\": true\n        },\n        \"air\": {\n            \"on\": true\n        },\n        \"brand\": \"Volkswagen\",\n        \"model\": \"Golf VI\",\n        \"color\": \"Gris\",\n        \"numDoors\": 5,\n        \"fuel\": \"Gasolina\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Cars: Get car by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"3"
+							]
+						},
+						"description": "Get a car by Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Cars: Create a new car",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "color",
+								"value": "amarillo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/electrico?brand=Peugeot&model=3008&color=Rojo&numDoors=5&fuel=Diesel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"electrico"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Peugeot",
+									"description": "Marca del coche"
+								},
+								{
+									"key": "model",
+									"value": "3008",
+									"description": "Modelo del coche"
+								},
+								{
+									"key": "color",
+									"value": "Rojo",
+									"description": "Color del coche"
+								},
+								{
+									"key": "numDoors",
+									"value": "5",
+									"description": "Número de puertas del coche"
+								},
+								{
+									"key": "fuel",
+									"value": "Diesel"
+								}
+							]
+						},
+						"description": "Create a new car"
+					},
+					"response": [
+						{
+							"name": "Cars: Create a new car (Combustión)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "color",
+										"value": "amarillo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/cars/combustion?brand=Volkswagen&model=Golf VI&color=Gris&numDoors=5&fuel=Gasolina",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"combustion"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "Volkswagen",
+											"description": "Marca del coche"
+										},
+										{
+											"key": "model",
+											"value": "Golf VI",
+											"description": "Modelo del coche"
+										},
+										{
+											"key": "color",
+											"value": "Gris",
+											"description": "Color del coche"
+										},
+										{
+											"key": "numDoors",
+											"value": "5",
+											"description": "Número de puertas del coche"
+										},
+										{
+											"key": "fuel",
+											"value": "Gasolina",
+											"description": "Tipo de combustible del motor de combustión"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:42:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"carType\": \"combustion\",\n    \"battery\": {\n        \"on\": true\n    },\n    \"motor\": {\n        \"on\": true\n    },\n    \"air\": {\n        \"on\": true\n    },\n    \"brand\": \"Volkswagen\",\n    \"model\": \"Golf VI\",\n    \"color\": \"Gris\",\n    \"numDoors\": 5,\n    \"fuel\": \"Gasolina\"\n}"
+						},
+						{
+							"name": "Cars: Create a new car (No existe el tipo de coche)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "color",
+										"value": "amarillo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/cars/noexiste?brand=Volkswagen&model=Golf VI&color=Gris&numDoors=5&fuel=Gasolina",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"noexiste"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "Volkswagen",
+											"description": "Marca del coche"
+										},
+										{
+											"key": "model",
+											"value": "Golf VI",
+											"description": "Modelo del coche"
+										},
+										{
+											"key": "color",
+											"value": "Gris",
+											"description": "Color del coche"
+										},
+										{
+											"key": "numDoors",
+											"value": "5",
+											"description": "Número de puertas del coche"
+										},
+										{
+											"key": "fuel",
+											"value": "Gasolina",
+											"description": "Tipo de combustible del motor de combustión"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "Content-Length",
+									"value": "431"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:43:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1></body></html>"
+						},
+						{
+							"name": "Cars: Create a new car (Eléctrico)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "color",
+										"value": "amarillo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/cars/electrico?brand=Peugeot&model=3008&color=Rojo&numDoors=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"electrico"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "Peugeot",
+											"description": "Marca del coche"
+										},
+										{
+											"key": "model",
+											"value": "3008",
+											"description": "Modelo del coche"
+										},
+										{
+											"key": "color",
+											"value": "Rojo",
+											"description": "Color del coche"
+										},
+										{
+											"key": "numDoors",
+											"value": "5",
+											"description": "Número de puertas del coche"
+										},
+										{
+											"key": "fuel",
+											"value": "Diesel",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:37:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"carType\": \"electrico\",\n    \"battery\": {\n        \"on\": true\n    },\n    \"motor\": {\n        \"on\": true\n    },\n    \"air\": {\n        \"on\": true\n    },\n    \"brand\": \"Peugeot\",\n    \"model\": \"3008\",\n    \"color\": \"Rojo\",\n    \"numDoors\": 5,\n    \"energyBattery\": 100\n}"
+						},
+						{
+							"name": "Cars: Create a new car (Híbrido)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "color",
+										"value": "amarillo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/cars/hibrido?brand=Renault&model=Clio&color=Azul&numDoors=3&fuel=Diesel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"hibrido"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "Renault",
+											"description": "Marca del coche"
+										},
+										{
+											"key": "model",
+											"value": "Clio",
+											"description": "Modelo del coche"
+										},
+										{
+											"key": "color",
+											"value": "Azul",
+											"description": "Color del coche"
+										},
+										{
+											"key": "numDoors",
+											"value": "3",
+											"description": "Número de puertas del coche"
+										},
+										{
+											"key": "fuel",
+											"value": "Diesel",
+											"description": "Tipo de combustible del motor de combustión"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:40:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"carType\": \"hibrido\",\n    \"battery\": {\n        \"on\": true\n    },\n    \"motor\": {\n        \"on\": true\n    },\n    \"air\": {\n        \"on\": true\n    },\n    \"brand\": \"Renault\",\n    \"model\": \"Clio\",\n    \"color\": \"Azul\",\n    \"numDoors\": 3,\n    \"energyBattery\": 100,\n    \"fuel\": \"Diesel\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cars: Update car by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/3?brand=Seat&model=Ibiza&color=Gris&numDoors=3&fuel=Diesel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"3"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Seat"
+								},
+								{
+									"key": "model",
+									"value": "Ibiza"
+								},
+								{
+									"key": "color",
+									"value": "Gris"
+								},
+								{
+									"key": "numDoors",
+									"value": "3"
+								},
+								{
+									"key": "fuel",
+									"value": "Diesel"
+								}
+							]
+						},
+						"description": "Update a car by Id."
+					},
+					"response": [
+						{
+							"name": "Cars: Update car by Id (Actualizar coche con id=2)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/cars/2?brand=Renaul&model=Clio&color=Amarillo&numDoors=5&fuel=Diesel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"2"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "Renaul"
+										},
+										{
+											"key": "model",
+											"value": "Clio"
+										},
+										{
+											"key": "color",
+											"value": "Amarillo"
+										},
+										{
+											"key": "numDoors",
+											"value": "5"
+										},
+										{
+											"key": "fuel",
+											"value": "Diesel"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:48:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"carType\": \"hibrido\",\n    \"battery\": {\n        \"on\": true\n    },\n    \"motor\": {\n        \"on\": true\n    },\n    \"air\": {\n        \"on\": true\n    },\n    \"brand\": \"Renaul\",\n    \"model\": \"Clio\",\n    \"color\": \"Amarillo\",\n    \"numDoors\": 5,\n    \"energyBattery\": 100,\n    \"fuel\": \"Diesel\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cars: Delete a car by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numPlaca\": \"1113\",\n    \"idRol\": 2,\n    \"password\": \"asdfg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"2"
+							],
+							"query": [
+								{
+									"key": "numPlaca",
+									"value": "1234",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Delete a car by Id."
+					},
+					"response": [
+						{
+							"name": "Cars: Delete a car by Id (Eliminar coche que no existe)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"numPlaca\": \"1113\",\n    \"idRol\": 2,\n    \"password\": \"asdfg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cars/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"5"
+									],
+									"query": [
+										{
+											"key": "numPlaca",
+											"value": "1234",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:50:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "\"NOT_FOUND\""
+						},
+						{
+							"name": "Cars: Delete a car by Id (Eliminar coche con id=2)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"numPlaca\": \"1113\",\n    \"idRol\": 2,\n    \"password\": \"asdfg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/cars/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars",
+										"2"
+									],
+									"query": [
+										{
+											"key": "numPlaca",
+											"value": "1234",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:49:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "\"OK\""
+						}
+					]
+				},
+				{
+					"name": "Delete: Delete all cars",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							]
+						},
+						"description": "Delete all cars."
+					},
+					"response": [
+						{
+							"name": "Delete: Delete all cars (Eliminar todos los coches)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Mar 2021 20:50:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "\"OK\""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
